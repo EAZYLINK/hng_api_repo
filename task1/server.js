@@ -14,7 +14,13 @@ app.get('/api', (req, res)=> {
     const {slack_name, track} = req.query
     const date = new Date()
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    const utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDay()))
+    const  year = String(date.getUTCFullYear() + 1).padStart(2, '0')
+    const  month = String( date.getUTCMonth() + 1).padStart(2, '0')
+    const day = String(date.getUTCDay() + 1).padStart(2, '0')
+    const hours = String(date.getUTCHours()).padStart(2, '0');
+    const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+    const utcDate = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`
     res.json({ 
     slack_name,
     current_day: weekday[date.getDay()],
