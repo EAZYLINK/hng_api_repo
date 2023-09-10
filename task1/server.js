@@ -3,6 +3,12 @@ import express from 'express'
 const app = express()
 
 app.use(express.json())
+app.get('/', (req, res)=> {
+    res.status(200).json({
+        succes: true,
+        message: "Welcome to our API..."
+    })
+})
 
 app.get('/api', (req, res)=> {
     const {slack_name, track} = req.query
@@ -14,7 +20,7 @@ app.get('/api', (req, res)=> {
     current_day: weekday[date.getDay()],
     utc_time: utcDate,
     track,
-    github_file_url: "https://github.com/username/repo/blob/main/file_name.ext",
+    github_file_url: "https://github.com/EAZYLINK/hng_api_repo/blob/main/task1/server.js",
     github_repo_url: "https://github.com/EAZYLINK/hng_api_repo.git",
     status_code: 200
     })
