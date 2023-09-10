@@ -15,7 +15,7 @@ app.get('/api', (req, res)=> {
     utc_time: utcDate,
     track,
     github_file_url: "https://github.com/username/repo/blob/main/file_name.ext",
-    github_repo_url: "https://github.com/username/repo",
+    github_repo_url: "https://github.com/EAZYLINK/hng_api_repo.git",
     status_code: 200
     })
 })
