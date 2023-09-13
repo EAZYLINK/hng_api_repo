@@ -1,4 +1,12 @@
 import express from 'express'
+import dotenv from 'dotenv'
+import { connectDB } from './connectDB.js'
+import { personRoute } from './personRoute.js'
+
+dotenv.config()
+
+const PORT = process.env.PORT
+const MONGODB_URL = process.env.MONGODB_URL
 
 const app = express()
 
@@ -32,6 +40,9 @@ app.get('/api', (req, res)=> {
     })
 })
 
-app.listen(8000, ()=>{
+app.use('/api', personRoute)
+
+app.listen(8000, async()=>{
+    await connectDB(MONGODB_URL);
     console.log("Server running....")
 })
