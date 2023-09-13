@@ -204,6 +204,6 @@ Detailed Documentation: Documentation should provide clear guidance on how to us
 
 ## - UML Diagram
 ![UML Diagram](
-    ![Alt text](https://drive.google.com/file/d/19bL6hjWxRf_bF2tlktFrIjte0E1_-c1J/view?usp=sharing)
+    ![Alt text](api_v1/uml_diagram.png?raw=true)
     "UML Diagram"
     )
