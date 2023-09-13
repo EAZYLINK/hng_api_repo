@@ -5,8 +5,8 @@ import { personRoute } from './personRoute.js'
 
 dotenv.config()
 
-const PORT = process.env.PORT
-const MONGODB_URL = process.env.MONGODB_URL
+const PORT = process.env.PORT || 5000
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/hng_api"
 
 const app = express()
 
@@ -42,7 +42,7 @@ app.get('/api', (req, res)=> {
 
 app.use('/api', personRoute)
 
-app.listen(8000, async()=>{
+app.listen(PORT, async()=>{
     await connectDB(MONGODB_URL);
-    console.log("Server running....")
+    console.log(`Server is running on port ${PORT}`)
 })
