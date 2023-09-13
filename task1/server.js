@@ -6,7 +6,7 @@ import { personRoute } from './personRoute.js'
 dotenv.config()
 
 const PORT = process.env.PORT || 5000
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/hng_api"
+const MONGODB_URL = process.env.MONGODB_URL
 
 const app = express()
 
